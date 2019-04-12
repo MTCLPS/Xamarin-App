@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MTC.LPS"
+             x:Class="MTC.LPS.MainPage">
+    <Grid RowSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+        <StackLayout Padding="20">
+            <!-- Place new controls here -->
+            <Label Text="Privacy Policy"
+                   FontSize="26" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="When you use our website you may fill some forms with your personal data. And it's a big responsability for us to protect you, your data and to inform you how we use it.We use generally your first name, your last name and your e-mail in the registrations for our training sessions to ensure the best experience for you and all our users."/>
+            <Label Text="Why we need your e-mail ?" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="In order to avoid replicates, we ask you for your e-mail adress to be sure if you aren't registered yet for the training. In addition to that, Verificaton mails helps us confirm your identity and make sure that you are the owner for the request and responsible of it. Also, registration with e-mail helps us know approximately the number of attendees so we provide the best of us for you."/>
+            <Label Text="Why we need your name ?" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="Your name is essential for us to know you and to know that you are a real person. In fact by asking your name, we can filter the requests and remove any duplicates, or fake registrations. Also it helps us doing a faster check-in in our trainings, so you can attend the training session without waiting too much in the checking-in."/>
+            <Label Text="How we use your data ?" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="It's a big responsability and big honor for us to protect your data. Here's how we use it: "/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="First of all your data is saved and protected in our databases." />
+                            <Span Text=" Only our bureau can see the data or manage it." FontAttributes="Bold"/>
+                            <Span Text=" When you register to an event, we verify that you are a human to block spams and robots. Then we verify your e-mail and send you a message containing a verification link. When you click that link you will be automatically registered to the training session. Then we get the list of attendees and send you an e-mail just before a day of the session to remind you of it. Finally, we print the list of attendees and do the check in with it."/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+    </ScrollView>
+        <StackLayout Orientation="Horizontal" Padding="10, 5" Spacing="10" Grid.Row="1" BackgroundColor="#0067b8">
+            <Button x:Name="Refuse" Text="Refuse" HorizontalOptions="FillAndExpand" Clicked="Refuse_Clicked" BackgroundColor="#005da6"/>
+            <Button x:Name="Accept" Text="Accept" HorizontalOptions="FillAndExpand" Clicked="Accept_Clicked" BackgroundColor="#005da6"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

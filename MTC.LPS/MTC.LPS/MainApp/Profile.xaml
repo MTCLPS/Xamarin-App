@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MTC.LPS.MainApp.Profile" Title="Profile">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <BoxView BackgroundColor="SkyBlue"
+                     x:Name="Couveture"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression
+                     Type=RelativeToParent,
+                     Property=Width,
+                     Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression
+                     Type=RelativeToParent,
+                     Property=Height,
+                     Factor=0.33}"/>
+            <BoxView BackgroundColor="DeepPink" 
+                     x:Name="pdp" HeightRequest="100" WidthRequest="100" 
+                     RelativeLayout.XConstraint="{ConstraintExpression 
+                     Type=RelativeToParent,
+                     Property=Width,
+                     Factor=0.5,
+                     Constant=-50}"
+                     RelativeLayout.YConstraint="{ConstraintExpression
+                     Type=RelativeToParent,
+                     Property=Height,
+                     Factor=0.33,
+                     Constant=-50}"/>
+            <StackLayout RelativeLayout.YConstraint="{ConstraintExpression
+                         Type=RelativeToView,
+                         ElementName=pdp,
+                         Property=Y,
+                         Factor=1,
+                         Constant=100}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression
+                         Type=RelativeToParent,
+                         Property=Width,
+                         Factor=1}"
+                         Padding="20"                        
+                         >
+                <Label x:Name="Name"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"/>
+                <Grid Padding="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="&#xE104;" FontFamily="{StaticResource Icons}" Grid.Column="1"/>
+                    <Button Text="&#xE107;" FontFamily="{StaticResource Icons}" Grid.Column="2"/>
+                </Grid>
+            </StackLayout>
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

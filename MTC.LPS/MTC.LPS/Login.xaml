@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MTC.LPS.Login" BackgroundColor="DeepSkyBlue" >
+    <ContentPage.Content>
+        <StackLayout Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Label Text="MTC.LPS" HorizontalOptions="Center" FontAttributes="Bold" FontSize="26" TextColor="White"/>
+            <Label Text="Login" HorizontalOptions="Center" TextColor="White" Margin="0,10,0,10"/>
+            <Entry Placeholder="E-mail"
+               x:Name="Email"
+               Style="{StaticResource Default_entry}"
+               Keyboard="Email"/>
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Password" MinimumWidthRequest="150"
+                       x:Name="Password"
+                       Style="{StaticResource Default_entry}"
+                       IsPassword="True"/>
+                <Button Text="Show" x:Name="Show" 
+                        TextColor="White" 
+                        BackgroundColor="DarkCyan"
+                        Clicked="Button_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+                <Button x:Name="Sign"
+                        Text="Sign up" 
+                        Style="{StaticResource Default_button}"
+                        HorizontalOptions="EndAndExpand" 
+                        Clicked="Signup_Clicked"/>
+                <Button x:Name="Log" Text="Login"
+                        Style="{StaticResource Default_button}"
+                        HorizontalOptions="Fill" Clicked="Login_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

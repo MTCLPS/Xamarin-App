@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="DeepSkyBlue" 
+             x:Class="MTC.LPS.MainApp.Effects" Title="Effects" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10,40,10,40" VerticalOptions="Center" x:Name="Page1">
+            <Grid x:Name="grid1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" x:Name="col1"/>
+                    <ColumnDefinition Width="*" x:Name="col2"/>
+                </Grid.ColumnDefinitions>
+                <Image  HeightRequest="180" HorizontalOptions="Center" Margin="10" 
+                   Opacity="{Binding Source={x:Reference Slider1}, Path= Value}"
+                   Rotation="{Binding Source={x:Reference Slider2}, Path= Value}"
+                   Grid.Column="0" x:Name="Image1">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="FileImageSource">
+                            <On Platform="UWP" Value="Assets/ME.jpg"/>
+                            <On Platform="Android" Value="me.jpg"/>
+                            <On Platform="iOS" Value="ME.jpg"/>
+                        </OnPlatform>
+                    </Image.Source>
+                </Image>
+                <Image HeightRequest="180" HorizontalOptions="Center" Margin="10"
+                   Opacity="{Binding Source={x:Reference Slider1}, Path= Value}"
+                   Rotation="{Binding Source={x:Reference Slider2}, Path= Value}"
+                   Grid.Column="1" x:Name="Image2">
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="FileImageSource">
+                            <On Platform="UWP" Value="Assets/sans-titre.png"/>
+                            <On Platform="Android" Value="sanstitre.png"/>
+                            <On Platform="iOS" Value="sans-titre.png"/>
+                        </OnPlatform>
+                    </Image.Source>
+                </Image>
+            </Grid>
+            <Label Text="Set the opacity" TextColor="White"/>
+            <Slider x:Name="Slider1" Maximum="1" Minimum="0" Value="1"/>
+            <Label Text="Rotate the images" TextColor="White"/>
+            <Slider x:Name="Slider2" Maximum="359" Minimum="0" Value="0"/>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Text="Inverse the images!" Clicked="Inverse_img" Grid.Row="0" Grid.Column="0" x:Name="Changeimg" BackgroundColor="#005da6" TextColor="White"/>
+                <Button Text="Inverse the buttons!" Clicked="Inverse_btn" Grid.Row="0" Grid.Column="1" x:Name="Changebtn" BackgroundColor="#005da6" TextColor="White"/>
+                <Button Text="Change slider values" Clicked="ChangeSlider_Clicked" Grid.Row="1" Grid.Column="0" x:Name="ChangeSlider" BackgroundColor="#005da6" TextColor="White"/>
+                <Button Text="Change the background Color!" Clicked="Change_Clicked" x:Name="Change" Grid.Row="1" Grid.Column="1" BackgroundColor="#005da6" TextColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
